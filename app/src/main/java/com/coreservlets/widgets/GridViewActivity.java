@@ -25,7 +25,7 @@ public class GridViewActivity extends Activity {
 
         GridView gridv = findViewById(R.id.gridview);
         List<String> futureAndroidVendors = getFutureAndroidVendors();
-        ArrayAdapter<String> gridAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, futureAndroidVendors);
+        ArrayAdapter<String> gridAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, futureAndroidVendors);
         gridv.setAdapter(gridAdapter);
         gridv.setOnItemClickListener(new GridViewInfo());
     }

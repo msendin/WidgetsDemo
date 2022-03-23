@@ -4,34 +4,28 @@
       android:versionCode="1"
       android:versionName="1.0">
 
+    <uses-sdk android:minSdkVersion="26"
+        android:targetSdkVersion="32"
+        android:maxSdkVersion="32" />
+
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:allowBackup="true">
-        <activity android:name=".WidgetsInitialActivity"
-                  android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".WidgetsInitialActivity">
+
         </activity>
         <activity android:name=".ButtonActivity"
                   android:label="@string/button_app_name"
-                  android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+                  android:screenOrientation="fullSensor" android:exported="true">
+
         </activity>
         <activity android:name=".SpinnerActivity"
                   android:label="@string/spinner_app_name"
-                  android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+                  android:screenOrientation="fullSensor" >
+
         </activity>
         
         <activity android:name=".ListViewActivity"
                   android:label="@string/list_view_app_name"
-                  android:screenOrientation="portrait">
+                  android:screenOrientation="fullSensor" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -40,11 +34,7 @@
 
         <activity android:name=".GridViewActivity"
                   android:label="@string/grid_view_app_name"
-                  android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+                  android:screenOrientation="fullSensor">
         </activity>
         
     </application>

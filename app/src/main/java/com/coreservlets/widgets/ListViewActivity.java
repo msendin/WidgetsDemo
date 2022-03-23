@@ -1,5 +1,6 @@
 package com.coreservlets.widgets;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -31,7 +32,7 @@ public class ListViewActivity  extends Activity implements OnItemClickListener {
         lv = findViewById(R.id.listview);
 
         List<String> futureAndroidVendors = getFutureAndroidVendors();
-        listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_single_choice, futureAndroidVendors);
+        listAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_single_choice, futureAndroidVendors);
         lv.setAdapter(listAdapter);
         lv.setOnItemClickListener(this);
         registerForContextMenu(lv);
@@ -57,37 +58,5 @@ public class ListViewActivity  extends Activity implements OnItemClickListener {
                 String message =
                         String.format(mPlantillaMensajeItemSelected, selection);
                 showToast(message);
-    }
-
-
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v,
-                                    ContextMenu.ContextMenuInfo menuInfo)
-    {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_ctx, menu);
-
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        int position;
-
-        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
-
-        switch (item.getItemId()) {
-            case R.id.menu_cont_op1:
-                position = info.position;
-                item.setTitle(item.getTitle().toString().toUpperCase());
-                listAdapter.notifyDataSetChanged();
-                return true;
-
-            case R.id.menu_cont_op2:
-                Toast.makeText(this, "Etiqueta: Opcion Contextual 3 pulsada!: Mostrar Toast", Toast.LENGTH_SHORT).show();
-                return true;
-            default:
-                return super.onContextItemSelected(item);
-        }
     }
 }

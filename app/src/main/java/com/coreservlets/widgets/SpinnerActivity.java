@@ -28,7 +28,7 @@ public class SpinnerActivity extends Activity {
 
         Spinner spinner2 = findViewById(R.id.spinner2);
         List<String> futureAndroidVendors = getFutureAndroidVendors();
-        ArrayAdapter<String> spinner2Adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, futureAndroidVendors);
+        ArrayAdapter<String> spinner2Adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, futureAndroidVendors);
         spinner2Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(spinner2Adapter);
         spinner2.setOnItemSelectedListener(new SpinnerInfo());
