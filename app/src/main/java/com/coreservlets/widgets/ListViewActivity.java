@@ -35,8 +35,6 @@ public class ListViewActivity  extends Activity implements OnItemClickListener {
         listAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_single_choice, futureAndroidVendors);
         lv.setAdapter(listAdapter);
         lv.setOnItemClickListener(this);
-        registerForContextMenu(lv);
-        
     }
     
     private List<String> getFutureAndroidVendors() {
