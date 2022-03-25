@@ -21,14 +21,14 @@ import java.util.List;
 
 public class ListViewActivity  extends Activity implements OnItemClickListener {
     private String mPlantillaMensajeItemSelected;
-    ListView lv;
-    ArrayAdapter<String> listAdapter;
+    private ListView lv;
+    private ArrayAdapter<String> listAdapter;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.listview);
-                mPlantillaMensajeItemSelected = getString(R.string.plantilla_mensaje_listview);
+        mPlantillaMensajeItemSelected = getString(R.string.plantilla_mensaje_listview);
         lv = findViewById(R.id.listview);
 
         List<String> futureAndroidVendors = getFutureAndroidVendors();
