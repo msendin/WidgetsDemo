@@ -9,6 +9,8 @@ import android.view.View;
 
 public class WidgetsInitialActivity extends Activity {
 
+    Intent in;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,24 +21,24 @@ public class WidgetsInitialActivity extends Activity {
     /** Switches to the ButtonActivity when the associated button is clicked. */
     
     public void muestraBotones (View clickedButton) {
-    	Intent in = new Intent(this, ButtonActivity.class);
+    	in = new Intent(this, ButtonActivity.class);
         startActivity(in);
     }
     
     /** Switches to the SpinnerActivity when the associated button is clicked. */
     
     public void muestraSpinners(View clickedButton) {
-    	Intent in = new Intent(this, SpinnerActivity.class);
+    	in = new Intent(this, SpinnerActivity.class);
         startActivity(in);
     }
     
     public void muestraListView(View clickedButton) {
-    	Intent in = new Intent(this, ListViewActivity.class);
+    	in = new Intent(this, ListViewActivity.class);
         startActivity(in);
     }
     
     public void muestraGridView(View clickedButton) {
-    	Intent in = new Intent(this, GridViewActivity.class);
+    	in = new Intent(this, GridViewActivity.class);
     	in.putExtra("contador", 2);   	
     	startActivity(in);
     }
