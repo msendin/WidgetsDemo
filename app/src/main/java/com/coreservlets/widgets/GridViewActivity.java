@@ -18,12 +18,11 @@ import java.util.List;
 
 public class GridViewActivity extends Activity {
     private String mPlantillaMensajeItemSelected;
-    private GridviewBinding binding;
-    
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = GridviewBinding.inflate(getLayoutInflater());
+        GridviewBinding binding = GridviewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         mPlantillaMensajeItemSelected = getString(R.string.plantilla_mensaje_gridview);
 

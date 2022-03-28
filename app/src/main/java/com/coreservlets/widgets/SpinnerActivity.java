@@ -19,12 +19,11 @@ import java.util.List;
 
 public class SpinnerActivity extends Activity {
     private String mPlantillaMensajeItemSelected;
-    private SpinnersBinding binding;
-    
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = SpinnersBinding.inflate(getLayoutInflater());
+        SpinnersBinding binding = SpinnersBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         mPlantillaMensajeItemSelected = getString(R.string.plantilla_mensaje_spinner);
 
