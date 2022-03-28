@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import com.coreservlets.widgets.databinding.GridviewBinding;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -16,18 +18,19 @@ import java.util.List;
 
 public class GridViewActivity extends Activity {
     private String mPlantillaMensajeItemSelected;
+    private GridviewBinding binding;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gridview);
+        binding = GridviewBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         mPlantillaMensajeItemSelected = getString(R.string.plantilla_mensaje_gridview);
 
-        GridView gridv = findViewById(R.id.gridview);
         List<String> futureAndroidVendors = getFutureAndroidVendors();
-        ArrayAdapter<String> gridAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, futureAndroidVendors);
-        gridv.setAdapter(gridAdapter);
-        gridv.setOnItemClickListener(new GridViewInfo());
+        ArrayAdapter<String> gridAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, futureAndroidVendors);
+        binding.gridview.setAdapter(gridAdapter);
+        binding.gridview.setOnItemClickListener(new GridViewInfo());
     }
     
     private void showToast(String text) {

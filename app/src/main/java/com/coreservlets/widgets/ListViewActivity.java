@@ -14,6 +14,9 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
+import com.coreservlets.widgets.databinding.ListviewBinding;
+import com.coreservlets.widgets.databinding.SpinnersBinding;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -21,20 +24,18 @@ import java.util.List;
 
 public class ListViewActivity  extends Activity implements OnItemClickListener {
     private String mPlantillaMensajeItemSelected;
-    private ListView lv;
-    private ArrayAdapter<String> listAdapter;
-    
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.listview);
+        ListviewBinding binding = ListviewBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         mPlantillaMensajeItemSelected = getString(R.string.plantilla_mensaje_listview);
-        lv = findViewById(R.id.listview);
 
         List<String> futureAndroidVendors = getFutureAndroidVendors();
-        listAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_single_choice, futureAndroidVendors);
-        lv.setAdapter(listAdapter);
-        lv.setOnItemClickListener(this);
+        ArrayAdapter<String> listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_single_choice, futureAndroidVendors);
+        binding.listview.setAdapter(listAdapter);
+        binding.listview.setOnItemClickListener(this);
     }
     
     private List<String> getFutureAndroidVendors() {

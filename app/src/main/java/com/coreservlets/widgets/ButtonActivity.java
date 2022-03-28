@@ -16,6 +16,8 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.coreservlets.widgets.databinding.ButtonsBinding;
+
 public class ButtonActivity extends Activity {
 	
     private String mPlantillaMensajeBoton;
@@ -23,17 +25,17 @@ public class ButtonActivity extends Activity {
     private String mPlantillaMensajeCheck;
     private String mPlantillaMensajeToggleBoton;
 
-    
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.buttons); 
+        ButtonsBinding binding = ButtonsBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         mPlantillaMensajeBoton = getString(R.string.plantilla_mensaje_boton);
         mPlantillaMensajeCheck = getString(R.string.plantilla_mensaje_check);
         mPlantillaMensajeImageBoton = getString(R.string.plantilla_mensaje_imagebutton);
         mPlantillaMensajeToggleBoton = getString(R.string.plantilla_mensaje_togglebutton);
-        RadioGroup radioGroup = findViewById(R.id.radio_group);
-        radioGroup.setOnCheckedChangeListener(new RadioGroupInfo());
+        binding.radioGroup.setOnCheckedChangeListener(new RadioGroupInfo());
     }
     
     /** Makes a Toast showing the label of the Button, RadioButton, or CheckBox.
