@@ -132,6 +132,7 @@ public class ButtonActivity extends Activity {
         public RadioGroupInfo() {
         	mPlantillaMensajeNuevaSeleccion = getString(R.string.plantilla_mensaje_nuevaseleccion);
         	mPlantillaMensajeSeleccionCambiada = getString(R.string.plantilla_mensaje_seleccioncambiada);
+		mLastChecked = null;
         }
         
         @Override
